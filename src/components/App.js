@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import '../styles/App.css';
+import Navbar from "../components/Navbar"
+import Home from "../pages/Home"
+import Contacts from "../pages/Contacts"
+import Test from "../pages/Test"
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>My React App!</h1>
-            </div>
-        );
-    }
+import '../assets/App.css';
+
+function App() {
+    return (
+        <div className="app">
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/test" element={<Test />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
